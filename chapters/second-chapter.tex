@@ -1,0 +1,28 @@
+% !TeX root = ../main.tex
+\chapter{Euclidean Space}
+\section{Norm and Inner Product}
+If we call something Euclidean, we need to define so called length and angle, so we introduce the concepts of norm and inner product on a linear space.
+\begin{definition}{Norm}
+  we define $\phi:V \to \mathbb{R}$ s.t. $\forall x \in V$, denote $\left\| x \right\|$:
+  \begin{enumerate}
+    \item $\left\| x \right\| \geq 0$, $\left\| x \right\| = 0 \leftrightarrow x = O$ 
+    \item $\left\| c x \right\| = |c|\left\| x \right\|,\forall x \in V, c \in \mathbb{R}$
+    \item $\left\| x + y\right\| \leq \left\| x \right\| + \left\| y \right\|$
+  \end{enumerate}
+\end{definition}
+\begin{definition}{Inner Product}
+  define $\psi :V \circ V\to \mathbb{R}, \forall x, y,z \in V$, we denote $(x,y)$:
+  \begin{enumerate}
+    \item $(x,y)=(y,x)$
+    \item $(x,x) \geq 0, (x,x) = 0 \leftrightarrow x = O$
+    \item $(cx,y) = c(x,y)$
+    \item $(x +y,z) = (x,z)+(y,z)$
+  \end{enumerate}
+\end{definition}
+A Real Linear Space with an Inner product is called an Euclidean Space, and every inner product comes with an induced norm,
+$\left\| x \right\| = \sqrt{(x,x)}$
+and we can obtain the Cauchy-Schwartz Inequality
+\[|(x,y)| \leq \left\| x \right\|\left\| y \right\|\]
+\section{Orthogonality}
+
+

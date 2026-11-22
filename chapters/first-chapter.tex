@@ -1,0 +1,95 @@
+% !TeX root = ../main.tex
+\chapter{Linear Space and Basic Concepts}
+
+\section{Linear Space}
+
+% 从这里开始写正文。
+Before we discuss about linear space and all the good properties that we got in linear spaces
+we should have a big idea of what is considered as linear, thus we should construct addition and scalar multiplication,
+in these notes, we will call scalar multiplication a operation, although it is a collection of operations if we define operations rigoruously.
+Also, we will not define field in this course, we will mainly focus on $\mathbb{R}$ field, complex and finite field will not be discussed, and we will not use $\mathbb{F}$ for general fields. \\ 
+Let $V$ be a set, define
+\begin{definition}{Addition}
+ $\phi:V \times V\to V $, where 
+  $$\forall x,y \in V, \phi(x,y) = x + y \in V$$
+\end{definition} 
+
+\begin{definition}{Scalar Multiplication}
+  $\psi:\mathbb{R} \times V \to V$, where
+  \[\forall x \in V, \forall \lambda \in \mathbb{R}, \psi(\lambda,x) = \lambda x \in V\]
+\end{definition}
+If we define addition and scalar multiplicaiton as above, if $V$ satisfy the following 8 axioms,
+\begin{axiom}
+  $\forall x,y,z \in V, \forall c_{1},c_{2} \in \mathbb{R}$
+
+  \begin{enumerate}
+    [label=(\arabic*)]
+      \item $(x + y) + z = x + (y + z)$
+      \item $x + y = y + x$
+      \item $\exists O \in V s.t. x + O = x$
+      \item $\exists -x \in V s.t. x + (-x) = O$
+      \item $c_{1}(c_{2}x) = (c_{1}c_{2})x$
+      \item $\exists 1 \in \mathbb{R} s.t. 1x = x $
+      \item $c_{1}(x+y) = c_{1}x + c_{1}y$
+      \item $(c_{1}+c_{2})x = c_{1}x+c_{2}x$
+
+  \end{enumerate}
+\end{axiom}
+Then, we call $V$ a Linear Space over $\mathbb{R}$ or Real Linear Space.
+
+\section{Basic Concepts}
+\begin{definition}{Subspace}
+  Let V be a Linear Space and $S \subseteq V$ and $S \neq \emptyset$, 
+  If S is itself a linear space, then we call S a subspace of V.
+
+\end{definition}
+As S is a subset of V, thus axioms 1-2,5-8 is automatically inherited, 3-4 could be simply proven by the uniqueness of identity and inverse element.
+Thus, all we need is to check for closure, so
+
+\begin{theorem}
+  Let $V$ be a linear space and $S \subset V$ and $S \neq \emptyset$, S is a subspace of V iff 
+  \begin{enumerate}
+    \item $\forall x,y \in S$, $x+y \in S$
+    \item $\forall x \in S, c \in \mathbb{R}$, $cx \in S$
+  \end{enumerate} 
+\end{theorem}
+\begin{definition}{Linear Combination}
+  Let $\{x_{1},\dots,x_{k}\} \subset V$, scalars $c_{1},\dots,c_{k}$
+  \[x = \sum_{i=1}^{k}(c_{i}x_{i})\in V\], is a linear combination of the xi's
+
+\end{definition}
+\begin{definition}{Span}
+  The span of the set $S = \{x_{1},\dots,x_{k} \subset V\}$ is defined as
+  \[L(S) = \{y|y = \sum_{i=1}^{k}(c_{i}x_{i}),\forall c_{i} \in \mathbb{R} \}\]
+  We sometimes also use the notation $span\{x_{1},\dots,x_{k}\}$
+\end{definition}
+\begin{property}
+  $L(S)$ is a subspace of V
+\end{property}
+\begin{proof}
+  Take $v_{1},v_{2}\in L(S), \lambda \in \mathbb{R}$, $v_{1} = \sum_{i=1}^{n}(c_{i}x_{i}),v_{2} = \sum_{i=0}^{n}(d_{i}x_{i})$, where $\forall c_{i},d_{i} \in \mathbb{R}$
+  \begin{enumerate}
+    \item $v_{1}+v_{2} = \sum_{i = 1}^{n}((c_{i}+d_{i})x_{i})\in L(S)$
+    \item $\lambda v_{1} = \sum_{i=1}^{n}(\lambda c_{i}x_{i})$\qedhere
+  \end{enumerate}
+\end{proof}
+\begin{definition}{Linear Depedence}  
+  A set S is a linearly independent if $\exists c_{i}$'s, where
+  \[\sum_{i = 1}^{n}(c_{i}x_{i}) = O \Rightarrow c_{1} =\dots=c_{k}=0\]
+If S is not linearly independent, then S is linearly dependent.
+\end{definition}
+\begin{definition}{Basis}
+  A set B is a basis of V if 
+  \begin{enumerate}
+    \item B is linearly independent
+    \item L(B) = V
+
+  \end{enumerate}
+  
+\end{definition}
+Note: the basis of a linear space is not unique
+\begin{definition}{Dimension}
+  If a linear space V has a finite basis B, then every basis of V has the same number of elements, n,
+  we call n the dimension of V, denoted by $dim V=n$
+  
+\end{definition}

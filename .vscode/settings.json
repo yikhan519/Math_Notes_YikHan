@@ -1,0 +1,20 @@
+{
+  "latex-workshop.latex.outDir": "%DIR%/build",
+  "latex-workshop.latex.recipe.default": "ElegantBook (XeLaTeX)",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "ElegantBook (XeLaTeX)",
+      "tools": ["elegantbook-latexmk"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "elegantbook-latexmk",
+      "command": "/Library/TeX/texbin/latexmk",
+      "cwd": "%DIR%",
+      "args": ["%DOCFILE_EXT%"]
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab"
+}
